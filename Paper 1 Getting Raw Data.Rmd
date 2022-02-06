@@ -1,0 +1,45 @@
+---
+title: "Paper 1"
+author: "Ishaan Bansal"
+date: '2022-02-06'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#### Preamble ####
+# Purpose: Use OpendataToronto to get meta data about Catholic Literacry rates and University Applications
+# Author: Ishaan Bansal
+# Contact: ishaan.bansal@mail.utoronto.ca
+# Date: 06 Jan 2022
+
+```
+
+```{r}
+#### Workspace Setup ####
+install.packages ("opendatatoronto")
+install.packages ("tidyverse")
+install.packages("janitor")
+install.packages("tidyr")
+install.packages("dplyr")
+library(opendatatoronto)
+library(tidyverse)
+library(janitor)
+library(tidyr)
+library(dplyr)
+```
+
+```{r}
+#### Get Raw Data ####
+library(readr)
+Rawdata <- read.csv("Raw_data.csv", header = T)
+View(Rawdata)
+```
+
+```{r}
+
+```
+
