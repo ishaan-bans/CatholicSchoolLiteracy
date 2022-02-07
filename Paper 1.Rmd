@@ -1,0 +1,42 @@
+---
+title: "Correlation between Catholic Literacy Rates and University Applications"
+author: "Ishaan Bansal"
+date: '2022-02-06'
+output:
+  bookdown::pdf_document2:
+    toc: no
+abstract: "Literacy rates are a good indicator of number of university applications. We usually assume that a higher literacy rate is indicative of increased university applications. This paper will work to prove this relationship using data sourced from Open Data Toronto"
+thanks: "Code and data are available at:https://github.com/ishaan-bans/CatholicSchoolLiteracy.git"
+bibliography: references.bib
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+install.packages("ggplot2")
+install.packages("bookdown")
+library(ggplot2)
+library(bookdown)
+```
+
+# Introduction
+Data is taken from different regions of Canada. Shows raw data for Catholic literacy rates and University applications. Using this data this paper will attempt to prove a positive correlation between Literacy rates and University Applications. 
+
+# Data
+The data is sourced from Open Data Toronto [@citeopendatatoronto]. By filtering the data I was able to select only the columns I require for this analysis - Catholic Literacy rates and Catholic University applications using dplyr [@dplyr]. I will then create a plot using tidyverse [@citetidyverse] and ggplot [@ggplot]
+
+```{r}
+### Creating Plot ###
+date1 = read.csv('Raw_data.csv')
+ggplot(date1, aes(x='Catholic School Literacy', y= 'Catholic University Applicants')) +
+    geom_point()
+
+
+```
+
+# Conclusion
+As the plot shows, there is significant presence of a strong positive relationship between Catholic Literacy rates and Catholic University Applications. This proves our initial hypothesis. 
+
+# References
+[@citeR]
+[@citebookdown]
